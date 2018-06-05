@@ -678,7 +678,7 @@ bool8_32 S9xDeinitUpdate (int Width, int Height)
 	    S9xDisplayString (GFX.InfoString, (uint8 *)screen, 512);
 
 	//Draw to the screen
-    gles2_draw(screen, 256, Height);
+    gles2_draw((short *)screen, 256, Height);
     eglSwapBuffers(display, surface);
 
 	return(TRUE);
@@ -707,11 +707,11 @@ void _splitpath (const char *path, char *drive, char *dir, char *fname,
 {
 	*drive = 0;
 
-	char *slash = strrchr (path, '/');
+	const char *slash = strrchr (path, '/');
 	if (!slash)
 	slash = strrchr (path, '\\');
 
-	char *dot = strrchr (path, '.');
+	const char *dot = strrchr (path, '.');
 
 	if (dot && slash && dot < slash)
 	dot = NULL;

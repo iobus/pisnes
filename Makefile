@@ -83,7 +83,6 @@ CCFLAGS = $(OPTIMISE) \
 -DVAR_CYCLES \
 -DCPU_SHUTDOWN \
 -DSPC700_SHUTDOWN \
--fpermissive \
 -Wno-write-strings \
 $(CPUDEFINES) \
 $(SOUNDDEFINES) \
